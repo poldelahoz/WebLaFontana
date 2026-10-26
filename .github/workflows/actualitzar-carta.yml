@@ -1,0 +1,130 @@
+name: Actualitzar la carta
+
+# Descarrega el full de càlcul de Google, el converteix en carta.js i, si ha canviat, el publica.
+#
+# Configuració (Settings → Secrets and variables → Actions → Variables):
+#   CARTA_SHEET_ID  identificador del full (docs.google.com/spreadsheets/d/<ID>/edit).
+#                   El full ha d'estar compartit com a "Qualsevol persona amb l'enllaç: lector".
+#   CARTA_PUBLICAR  "si" perquè les execucions automàtiques publiquin els canvis.
+#                   Qualsevol altre valor (o sense definir) = aturat: no es llegeix ni es publica res.
+#
+# Execució manual (Actions → Actualitzar la carta → Run workflow):
+#   prova     llegeix el full i mostra un informe dels canvis, sense publicar (per defecte).
+#   publicar  llegeix el full i publica els canvis, encara que CARTA_PUBLICAR no sigui "si".
+
+on:
+  schedule:
+    - cron: "*/15 7-23 * * *"   # cada 15 minuts de 9 a 1 h (hora d'estiu de Barcelona)
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "prova = només informe, publicar = actualitza la web"
+        type: choice
+        options: [prova, publicar]
+        default: prova
+  repository_dispatch:
+    types: [carta-actualitzada] # per si més endavant el full avisa directament
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: actualitzar-carta
+  cancel-in-progress: false
+
+jobs:
+  carta:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SHEET_ID: ${{ vars.CARTA_SHEET_ID }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Decidir el mode
+        id: mode
+        env:
+          EVENT: ${{ github.event_name }}
+          INPUT_MODE: ${{ inputs.mode }}
+          PUBLICAR: ${{ vars.CARTA_PUBLICAR }}
+        run: |
+          if [ "$EVENT" = "workflow_dispatch" ]; then
+            mode="$INPUT_MODE"
+          elif [ "$PUBLICAR" = "si" ]; then
+            mode="publicar"
+          else
+            mode="aturat"
+          fi
+          echo "mode=$mode" >> "$GITHUB_OUTPUT"
+          echo "Mode: $mode"
+          if [ "$mode" = "aturat" ]; then
+            echo "Actualització automàtica aturada (la variable CARTA_PUBLICAR no és \"si\"). No es llegeix el full." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Configurar git
+        run: |
+          git config user.name "carta-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - uses: actions/setup-python@v5
+        if: steps.mode.outputs.mode != 'aturat'
+        with:
+          python-version: "3.12"
+
+      - name: Instal·lar dependències
+        if: steps.mode.outputs.mode != 'aturat'
+        run: pip install -r scripts/requirements.txt
+
+      - name: Descarregar el full de càlcul
+        if: steps.mode.outputs.mode != 'aturat'
+        run: |
+          test -n "$SHEET_ID" || { echo "::error::Falta la variable CARTA_SHEET_ID"; exit 1; }
+          curl -fsSL "https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=xlsx" -o carta.xlsx
+          # Si el full no és públic, Google retorna una pàgina HTML d'inici de sessió en lloc de l'Excel
+          file carta.xlsx | grep -qiE "zip|excel|microsoft" || { echo "::error::El full no és accessible. Comprova que estigui compartit amb 'Qualsevol persona amb l'enllaç'."; exit 1; }
+
+      - name: Llegir la carta
+        if: steps.mode.outputs.mode != 'aturat'
+        env:
+          MODE: ${{ steps.mode.outputs.mode }}
+        run: |
+          extra=""
+          [ "$MODE" = "prova" ] && extra="--prova"
+          python scripts/actualitzar_carta.py carta.xlsx --out carta.js --informe "$GITHUB_STEP_SUMMARY" $extra
+
+      - name: Publicar si hi ha canvis
+        id: commit
+        if: steps.mode.outputs.mode == 'publicar'
+        run: |
+          if git diff --quiet -- carta.js scripts/carta-diccionari.json; then
+            echo "La carta no ha canviat."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git add carta.js scripts/carta-diccionari.json
+          git commit -m "Carta actualitzada des del full de càlcul"
+          git pull --rebase --autostash --quiet
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "**Carta publicada a la web.**" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Demanar a GitHub Pages que torni a publicar
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/${{ github.repository }}/pages/builds" || echo "Pages es publicarà pel push."
+
+      # GitHub desactiva els processos programats si el repositori passa 60 dies sense activitat.
+      # Si fa 45 dies que no hi ha cap commit (la carta no ha canviat), en fem un de buit perquè
+      # l'actualització automàtica no s'aturi mai. S'executa encara que els passos anteriors fallin.
+      - name: Mantenir actiu el procés automàtic
+        if: always()
+        run: |
+          git pull --rebase --autostash --quiet
+          days=$(( ( $(date +%s) - $(git log -1 --format=%ct) ) / 86400 ))
+          echo "Dies des de l'últim commit: $days"
+          if [ "$days" -ge 45 ]; then
+            git commit --allow-empty -m "Manteniment automàtic: evita que GitHub aturi l'actualització de la carta"
+            git push
+          fi

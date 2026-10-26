@@ -1,1 +1,6 @@
 Carta-*.jpeg
+
+# Fulls de càlcul locals (la carta es llegeix del Google Sheets)
+*.xls
+*.xlsx
+__pycache__/

@@ -1048,6 +1048,8 @@ address { font-style: normal; }
 }
 .legend li { display: inline-flex; align-items: center; gap: var(--sp-2); }
 .menu__allergens { font-size: var(--fs-sm); color: var(--c-ink-soft); max-width: 40rem; }
+.menu__updated { font-size: var(--fs-xs); color: var(--c-ink-soft); }
+.menu__updated:empty { display: none; }
 .menu__actions { display: flex; flex-wrap: wrap; gap: var(--sp-3); }
 
 /* ---------- 9. Gallery (bento) ---------- */
@@ -1447,7 +1449,8 @@ address { font-style: normal; }
     align-items: center;
   }
   .menu__footer .legend,
-  .menu__footer .menu__allergens { grid-column: 1; }
+  .menu__footer .menu__allergens,
+  .menu__footer .menu__updated { grid-column: 1; }
   .menu__actions { grid-column: 2; grid-row: 1 / span 2; justify-content: flex-end; }
 }
 

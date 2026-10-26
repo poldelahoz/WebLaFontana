@@ -1,0 +1,499 @@
+{
+ "_llegeix_me": "noms: com es mostra cada plat (clau = nom normalitzat). textos: traduccions revisades CA->ES (manen sobre textos_auto). textos_auto: traduccions automàtiques pendents de revisar; per corregir-ne una, mou-la a textos. etiquetes: etiquetes fixades a mà (v, vg, hot; [] = cap).",
+ "noms": {
+  "croquetes": {
+   "ca": "Croquetes",
+   "es": "Croquetas"
+  },
+  "les nostres braves": {
+   "ca": "Les nostres braves",
+   "es": "Nuestras bravas"
+  },
+  "carpaccio de bou": {
+   "ca": "Carpaccio de bou",
+   "es": "Carpaccio de buey"
+  },
+  "delicies": {
+   "ca": "Delícies",
+   "es": "Delicias"
+  },
+  "bombes": {
+   "ca": "Bombes",
+   "es": "Bombas"
+  },
+  "fletxes de pollastre": {
+   "ca": "Fletxes de pollastre",
+   "es": "Flechas de pollo"
+  },
+  "calamarcets a l andalusa": {
+   "ca": "Calamarcets a l'andalusa",
+   "es": "Chipirones a la andaluza"
+  },
+  "timbal": "Timbal",
+  "la provoletta": "La Provoletta",
+  "tartar de salmo fumat": {
+   "ca": "Tartar de salmó fumat",
+   "es": "Tartar de salmón ahumado"
+  },
+  "la burrata di apulia": "La Burrata di Apulia",
+  "la caprese": "La Caprese",
+  "mixta": "Mixta",
+  "trentina": "Trentina",
+  "siena": "Siena",
+  "pisa": "Pisa",
+  "cesar": {
+   "ca": "Cèsar",
+   "es": "César"
+  },
+  "xato": "Xató",
+  "focaccia": "Focaccia",
+  "pa de coca torrat": {
+   "ca": "Pa de coca torrat",
+   "es": "Pan de coca tostado"
+  },
+  "pa de coca torrat amb tomaquet": {
+   "ca": "Pa de coca torrat amb tomàquet",
+   "es": "Pan de coca tostado con tomate"
+  },
+  "spaghetti frutti di mare": "Spaghetti Frutti di Mare",
+  "spaghetti vongole": "Spaghetti Vongole",
+  "spaghetti capriccio": "Spaghetti Capriccio",
+  "spaghetti tartufo": "Spaghetti Tartufo",
+  "spaghetti": "Spaghetti",
+  "rigatoni amb calamars": {
+   "ca": "Rigatoni amb calamars",
+   "es": "Rigatoni con calamares"
+  },
+  "rigatoni portofino": "Rigatoni Portofino",
+  "rigatoni pesto": "Rigatoni Pesto",
+  "garganelli nonna": "Garganelli Nonna",
+  "garganelli salmone": "Garganelli Salmone",
+  "garganelli arrabbiata": "Garganelli Arrabbiata",
+  "gnocchi": "Gnocchi",
+  "lasagna": "Lasagna",
+  "lunette": "Lunette",
+  "fiocchi": "Fiocchi",
+  "ravioloni": "Ravioloni",
+  "ravioli funghi": "Ravioli Funghi",
+  "raviolaccio": "Raviolaccio",
+  "bottoni": "Bottoni",
+  "risotto de ceps": {
+   "ca": "Risotto de ceps",
+   "es": "Risotto de boletus"
+  },
+  "risotto de gambes": {
+   "ca": "Risotto de gambes",
+   "es": "Risotto de gambas"
+  },
+  "apulia": "Apulia",
+  "ariccia": "Ariccia",
+  "pompeia": "Pompeia",
+  "regina": "Regina",
+  "tartufata": "Tartufata",
+  "toscana": "Toscana",
+  "vesubi": {
+   "ca": "Vesubi",
+   "es": "Vesubio"
+  },
+  "venecia": {
+   "ca": "Venècia",
+   "es": "Venecia"
+  },
+  "vulcano": "Vulcano",
+  "margherita": "Margherita",
+  "margherita amb un ingredient": {
+   "ca": "Margherita amb un ingredient",
+   "es": "Margherita con un ingrediente"
+  },
+  "4 formaggi": "4 Formaggi",
+  "4 stagioni": "4 Stagioni",
+  "abate": "Abate",
+  "abruzzo": "Abruzzo",
+  "anglesa": {
+   "ca": "Anglesa",
+   "es": "Inglesa"
+  },
+  "barbacoa": "Barbacoa",
+  "boscaiola": "Boscaiola",
+  "bufala": "Bufala",
+  "caliu": "Caliu",
+  "capra": "Capra",
+  "carbonara": "Carbonara",
+  "capricciosa": "Capricciosa",
+  "catalana": "Catalana",
+  "etna": "Etna",
+  "fiorentina": "Fiorentina",
+  "fontana": "Fontana",
+  "inferno": "Inferno",
+  "lido": "Lido",
+  "mallorquina": "Mallorquina",
+  "mareggiata": "Mareggiata",
+  "mediterranea": "Mediterranea",
+  "noruega": "Noruega",
+  "palermo": "Palermo",
+  "parma": "Parma",
+  "parmigiana": "Parmigiana",
+  "prosciutto e funghi": "Prosciutto e Funghi",
+  "stromboli": "Stromboli",
+  "tropical": "Tropical",
+  "vegetal": "Vegetal",
+  "zucchini": "Zucchini",
+  "delicia vegana": {
+   "ca": "Delícia Vegana",
+   "es": "Delicia Vegana"
+  },
+  "calamarcets a la planxa": {
+   "ca": "Calamarcets a la planxa",
+   "es": "Chipirones a la plancha"
+  },
+  "suprema de salmo": {
+   "ca": "Suprema de salmó",
+   "es": "Suprema de salmón"
+  },
+  "llenguado": {
+   "ca": "Llenguado",
+   "es": "Lenguado"
+  },
+  "galtes de porc": {
+   "ca": "Galtes de porc",
+   "es": "Carrilleras de cerdo"
+  },
+  "peus de porc": {
+   "ca": "Peus de porc",
+   "es": "Manitas de cerdo"
+  },
+  "galta a baixa temperatura": {
+   "ca": "Galta a baixa temperatura",
+   "es": "Carrillera a baja temperatura"
+  }
+ },
+ "textos": {
+  "Entrants": "Entrantes",
+  "Per picar i compartir": "Para picar y compartir",
+  "De pernil ibèric o de pollastre rostit": "De jamón ibérico o de pollo asado",
+  "Amb ruca i encenalls de parmesà": "Con rúcula y virutas de parmesano",
+  "Farcellets farcits de brie, cabra i gorgonzola amb melmelada de tomàquet": "Saquitos rellenos de brie, cabra y gorgonzola con mermelada de tomate",
+  "Massa de pizza fregida farcida de pulled pork": "Masa de pizza frita rellena de pulled pork",
+  "Amb arrebossat de dues textures i dues salses": "Con rebozado de dos texturas y dos salsas",
+  "Làmines d'albergínia amb salsa de tomàquet, formatge de cabra gratinat i ametlles": "Láminas de berenjena con salsa de tomate, queso de cabra gratinado y almendras",
+  "Formatge provolone semifos amb focaccia": "Queso provolone semifundido con focaccia",
+  "Amb alvocat i tomàquet, mantega a les fines herbes i torradetes": "Con aguacate y tomate, mantequilla a las finas hierbas y tostaditas",
+  "Les amanides": "Las ensaladas",
+  "Bola de mozzarella fresca d'interior cremós amb brots d'enciam, tomàquets confitats i reducció d'oli d'alfàbrega": "Bola de mozzarella fresca de interior cremoso con brotes de lechuga, tomates confitados y reducción de aceite de albahaca",
+  "Mozzarella de búfala fresca, tomàquet de temporada laminat, olives i orenga": "Mozzarella de búfala fresca, tomate de temporada laminado, aceitunas y orégano",
+  "Variat d'enciams, tomàquet xerri, ceba, pastanaga, olives, tonyina i puntes d'espàrrecs": "Variado de lechugas, tomate cherry, cebolla, zanahoria, aceitunas, atún y puntas de espárragos",
+  "Variat d'enciams, tomàquet xerri, cruixent de bacó, fruits secs i formatge de cabra amb vinagreta de nous": "Variado de lechugas, tomate cherry, crujiente de bacon, frutos secos y queso de cabra con vinagreta de nueces",
+  "Variat d'enciams, tomàquet sec confitat, encenalls de foie, pernil d'ànec, nous i encenalls de parmesà amb vinagreta de mel": "Variado de lechugas, tomate seco confitado, virutas de foie, jamón de pato, nueces y virutas de parmesano con vinagreta de miel",
+  "Variat d'enciams, fruits vermells, pera i gorgonzola amb vinagreta de fruits vermells": "Variado de lechugas, frutos rojos, pera y gorgonzola con vinagreta de frutos rojos",
+  "Variat d'enciams, pollastre cruixent, encenalls de parmesà i crostons de pa amb salsa Cèsar": "Variado de lechugas, pollo crujiente, virutas de parmesano y picatostes con salsa César",
+  "Escarola, bacallà, tonyina, anxoves, olives negres i salsa xató": "Escarola, bacalao, atún, anchoas, aceitunas negras y salsa xató",
+  "Pa i focaccia": "Pan y focaccia",
+  "Amb oli d'oliva i herbes aromàtiques": "Con aceite de oliva y hierbas aromáticas",
+  "Les pastes": "Las pastas",
+  "Amb cloïsses, musclos, calamars, gambes i salsa marinera": "Con almejas, mejillones, calamares, gambas y salsa marinera",
+  "Amb cloïsses, all i julivert": "Con almejas, ajo y perejil",
+  "Amb carn de galta amb la seva salsa i xampinyons": "Con carne de carrillera en su salsa y champiñones",
+  "Amb saltat de ceps, crema de tòfona i nata": "Con salteado de boletus, crema de trufa y nata",
+  "A la bolonyesa, als 4 formaggi o a la carbonara (sense nata)": "A la boloñesa, a los 4 formaggi o a la carbonara (sin nata)",
+  "Calamars saltats amb all i julivert i tomàquet xerri": "Calamares salteados con ajo y perejil y tomate cherry",
+  "Amb salsa pesto i tomàquet": "Con salsa pesto y tomate",
+  "Amb salsa pesto i burratina": "Con salsa pesto y burratina",
+  "Amb salsa bolonyesa, gratinats amb formatge": "Con salsa boloñesa, gratinados con queso",
+  "Amb salmó fumat flamejat al rom i nata": "Con salmón ahumado flambeado al ron y nata",
+  "Amb tomàquet xerri, all, anxoves, tàperes, bitxo i olives": "Con tomate cherry, ajo, anchoas, alcaparras, guindilla y aceitunas",
+  "Amb salsa de tomàquet i emmental o amb salsa 4 formaggi": "Con salsa de tomate y emmental o con salsa 4 formaggi",
+  "De carn o de verdures": "De carne o de verduras",
+  "Farcides de foie amb crema de parmesà i oli de tòfona": "Rellenas de foie con crema de parmesano y aceite de trufa",
+  "Farcits de pera i formatge amb crema de gorgonzola": "Rellenos de pera y queso con crema de gorgonzola",
+  "Farcits de ricotta i espinacs amb pesto d'espinacs i ametlla": "Rellenos de ricotta y espinacas con pesto de espinacas y almendra",
+  "Farcits de bolets amb salsa de ceps": "Rellenos de setas con salsa de boletus",
+  "Farcit de carn amb salsa de tomàquet": "Relleno de carne con salsa de tomate",
+  "Farcits de gamba vermella amb salsa de gamba": "Rellenos de gamba roja con salsa de gamba",
+  "Els risottos": "Los risottos",
+  "Pizzes gourmet": "Pizzas gourmet",
+  "Tomàquet, mozzarella, burrata, ruca, tomàquet sec i olivada": "Tomate, mozzarella, burrata, rúcula, tomate seco y olivada",
+  "Tomàquet, mozzarella, porchetta (lligat de carn de porc rostida amb herbes aromàtiques) i poma caramel·litzada": "Tomate, mozzarella, porchetta (rollo de cerdo asado con hierbas aromáticas) y manzana caramelizada",
+  "Tomàquet, mozzarella, esmicolat de confit d'ànec i figues": "Tomate, mozzarella, desmigado de confit de pato e higos",
+  "Tomàquet, mozzarella, salmó fumat, ous de guatlla i alvocat": "Tomate, mozzarella, salmón ahumado, huevos de codorniz y aguacate",
+  "Crema de tòfona, mozzarella, ceps i xampinyons": "Crema de trufa, mozzarella, boletus y champiñones",
+  "Tomàquet, mozzarella, mortadel·la D.O., burratina, crema i cruixent de festucs": "Tomate, mozzarella, mortadela D.O., burratina, crema y crujiente de pistachos",
+  "Tomàquet, mozzarella, botifarra negra, tomàquet xerri, pinyons i maionesa": "Tomate, mozzarella, butifarra negra, tomate cherry, piñones y mayonesa",
+  "Tomàquet, mozzarella, pernil d'ànec, foie i tomàquet sec confitat": "Tomate, mozzarella, jamón de pato, foie y tomate seco confitado",
+  "Tomàquet, mozzarella, pulled pork, ceba, pebrot i la seva salsa": "Tomate, mozzarella, pulled pork, cebolla, pimiento y su salsa",
+  "Pizzes de sempre": "Pizzas de siempre",
+  "Tomàquet, mozzarella i orenga": "Tomate, mozzarella y orégano",
+  "Sense orenga, amb pernil dolç, bacó, salami picant, frankfurt, funghi o tonyina": "Sin orégano, con jamón dulce, bacon, salami picante, frankfurt, funghi o atún",
+  "Tomàquet, mozzarella, emmental, gorgonzola i parmesà": "Tomate, mozzarella, emmental, gorgonzola y parmesano",
+  "Tomàquet, mozzarella, pernil dolç, xampinyons, carxofes, salami picant i olives": "Tomate, mozzarella, jamón dulce, champiñones, alcachofas, salami picante y aceitunas",
+  "Mozzarella, pera, parmesà, gorgonzola i nous": "Mozzarella, pera, parmesano, gorgonzola y nueces",
+  "Tomàquet, mozzarella, tonyina, carxofes i ceba": "Tomate, mozzarella, atún, alcachofas y cebolla",
+  "Tomàquet, mozzarella, bacó i ou": "Tomate, mozzarella, bacon y huevo",
+  "Tomàquet, mozzarella, carn de vedella i salsa barbacoa": "Tomate, mozzarella, carne de ternera y salsa barbacoa",
+  "Tomàquet, mozzarella, ceps, xampinyons i emmental": "Tomate, mozzarella, boletus, champiñones y emmental",
+  "Tomàquet, mozzarella de búfala fresca i oli d'alfàbrega": "Tomate, mozzarella de búfala fresca y aceite de albahaca",
+  "Tomàquet, mozzarella, patata caliu, brie, parmesà i allioli": "Tomate, mozzarella, patata caliu, brie, parmesano y alioli",
+  "Tomàquet, mozzarella, ceba caramel·litzada i formatge de cabra": "Tomate, mozzarella, cebolla caramelizada y queso de cabra",
+  "Tomàquet, mozzarella, bacó i salsa carbonara": "Tomate, mozzarella, bacon y salsa carbonara",
+  "Tomàquet, mozzarella, carxofes, xampinyons i olives": "Tomate, mozzarella, alcachofas, champiñones y aceitunas",
+  "Tomàquet, mozzarella, pernil dolç, salami picant, botifarra i bacó": "Tomate, mozzarella, jamón dulce, salami picante, butifarra y bacon",
+  "Tomàquet, mozzarella, vedella, ceba, xampinyons i gorgonzola": "Tomate, mozzarella, ternera, cebolla, champiñones y gorgonzola",
+  "Tomàquet, mozzarella, pollastre, ceba i salsa barbacoa": "Tomate, mozzarella, pollo, cebolla y salsa barbacoa",
+  "Tomàquet, mozzarella, botifarra, pebrot i ceba escalivats": "Tomate, mozzarella, butifarra, pimiento y cebolla asados",
+  "Tomàquet, mozzarella, carn de vedella, salami picant i salsa inferno": "Tomate, mozzarella, carne de ternera, salami picante y salsa inferno",
+  "Tomàquet, mozzarella, tonyina, gambes i ceba": "Tomate, mozzarella, atún, gambas y cebolla",
+  "Tomàquet, mozzarella, sobrassada, ceba i mel": "Tomate, mozzarella, sobrasada, cebolla y miel",
+  "Tomàquet, mozzarella, tonyina, musclos, gambes i cloïsses": "Tomate, mozzarella, atún, mejillones, gambas y almejas",
+  "Tomàquet, mozzarella, tonyina, anxoves, pebrot, ceba i olives": "Tomate, mozzarella, atún, anchoas, pimiento, cebolla y aceitunas",
+  "Tomàquet, mozzarella, salmó fumat, anxoves i tonyina": "Tomate, mozzarella, salmón ahumado, anchoas y atún",
+  "Tomàquet, mozzarella, salami picant, formatge provolone i ceba caramel·litzada": "Tomate, mozzarella, salami picante, queso provolone y cebolla caramelizada",
+  "Tomàquet, mozzarella, pernil salat, encenalls de parmesà i ruca": "Tomate, mozzarella, jamón serrano, virutas de parmesano y rúcula",
+  "Tomàquet, mozzarella, albergínia, emmental i parmesà": "Tomate, mozzarella, berenjena, emmental y parmesano",
+  "Tomàquet, mozzarella, pernil dolç, xampinyons i olives": "Tomate, mozzarella, jamón dulce, champiñones y aceitunas",
+  "Tomàquet, mozzarella, botifarra, tomàquet fresc laminat, ceba i rocafort": "Tomate, mozzarella, butifarra, tomate fresco laminado, cebolla y roquefort",
+  "Tomàquet, mozzarella, pernil dolç i pinya": "Tomate, mozzarella, jamón dulce y piña",
+  "Tomàquet, mozzarella, albergínia, carbassó, xampinyons, pebrot i olives": "Tomate, mozzarella, berenjena, calabacín, champiñones, pimiento y aceitunas",
+  "Tomàquet, mozzarella, bacó, carbassó i formatge brie": "Tomate, mozzarella, bacon, calabacín y queso brie",
+  "Tomàquet, mozzarella vegana, albergínia, ceba caramel·litzada, xerris i oli d'alfàbrega": "Tomate, mozzarella vegana, berenjena, cebolla caramelizada, cherrys y aceite de albahaca",
+  "Prosciutto, bacó, salami picant, tonyina, carxofes, gorgonzola, rocafort, brie, cabra, mozzarella, frankfurt": "Prosciutto, bacon, salami picante, atún, alcachofas, gorgonzola, roquefort, brie, cabra, mozzarella, frankfurt",
+  "Pollastre, carn de vedella, botifarra, ceps, salmó, calamars, pernil salat, anxoves, pulled pork, mortadel·la, botifarra negra": "Pollo, carne de ternera, butifarra, boletus, salmón, calamares, jamón serrano, anchoas, pulled pork, mortadela, butifarra negra",
+  "Mozzarella de búfala, burratina, gambes, foie, pernil d'ànec, confit d'ànec": "Mozzarella de búfala, burratina, gambas, foie, jamón de pato, confit de pato",
+  "El peix": "El pescado",
+  "Amb all i julivert, acompanyats de patata": "Con ajo y perejil, acompañados de patata",
+  "A la planxa amb verduretes saltades amb soja": "A la plancha con verduritas salteadas con soja",
+  "A la planxa amb verdures": "A la plancha con verduras",
+  "Les carns": "Las carnes",
+  "Filetejades a la planxa": "Fileteadas a la plancha",
+  "A la planxa amb picada d'ametlla": "A la plancha con picada de almendra",
+  "Amb salsa de bolets i reducció de vi": "Con salsa de setas y reducción de vino",
+  "Ingredient extra": "Ingrediente extra"
+ },
+ "textos_auto": {
+  "Assortiment de pernil ibèric, pollastre rostit i ceps amb foie": "Surtido de jamón ibérico, pollo asado y setas con foie",
+  "Amb pa de coca i pebrot escalivat": "Con pan de torta y pimiento escalivado",
+  "Amb rúcula i encenalls de parmesà": "Con rúcula y virutas de parmesano",
+  "Amb melmelada de tomàquet": "Con mermelada de tomate",
+  "Farcides de vedella picantona, pollastre marinat i formatge, gamba amb xampinyons i dues salses": "Rellenas de ternera picantona, pollo marinado y queso, gamba con champiñones y dos salsas",
+  "Amb arrebossat dues textures i dues salses": "Con enlucido dos texturas y dos salsas",
+  "Formatge provolone semi fos amb focaccia": "Queso provolone semi fundido con focaccia",
+  "Bola de mozzarella fresca amb interior cremós amb tomàquets confitats i reducció d'oli d'alfàbrega": "Bola de mozzarella fresca con interior cremoso con tomates encurtidos y reducción de aceite de albahaca",
+  "Mozzarella de búfala fresca, sobre llit de tomàquet llaminat \"cor de bou\" i orenga": "Mozzarella de búfala fresca, sobre cama de tomate laminado \"corazón de buey\" y orégano",
+  "Variat d'enciam, tomàquet xerri, ceba, pastanaga, olives, tonyina i puntes d'espàrrecs": "Variado de lechuga, tomate charly, cebolla, zanahoria, aceitunas, atún y puntas de espárragos",
+  "Variat d'enciam, tomàquet xerri confitat, cruixent de bacon, fuits secs, formatge de cabra amb vinagreta de nous": "Variado de lechuga, tomate charly confitado, crujiente de bacon, escapes secas, queso de cabra con vinagreta de nueces",
+  "Variat d'enciam, tomàquet sec confitat, encenalls de foie, pernil d'ànec, nous i encenalls de parmesà amb vinagreta de mel": "Variado de lechuga, tomate seco confitado, virutas de foie, jamón de pato, nueces y virutas de parmesano con vinagreta de miel",
+  "Variat d'enciam, fruits vermells, pera i gorgonzola amb vimagreta de fruits vermells": "Variado de lechuga, frutos rojos, pera y gorgonzola con vimagreta de frutos rojos",
+  "Variat d'enciam, pollastre cruixent, encenalls de parmesà i crostonets de pa amb salsa cèsar": "Variado de lechuga, pollo crujiente, virutas de parmesano y crostonets de pan con salsa césar",
+  "Amb tomàquet": "Con tomate",
+  "Amb cloïses, musclos, calamars, gambes i salsa marinera": "Con almejas, mejillones, calamares, gambas y salsa marinera",
+  "Amb cloïses i all i julivert": "Con almejas y ajo y perejil",
+  "Amb carn de galta amb la seva salsa i xampinyons.": "Con carne de mejilla con su salsa y champiñones.",
+  "Amb calamars saltats amb all i julivert i tomàquet xerri": "Con calamares salteados con ajo y perejil y tomate charly",
+  "Amb salsa de ceps, xampinyons i nata": "En salsa de setas, champiñones y nata",
+  "Amb salsa bolognese i amb formatge": "En salsa bolognese y con queso",
+  "Amb salmó fumat flambejat i nata": "Con salmón ahumado flambeado y nata",
+  "Amb salsa tomàquet i emmental": "En salsa tomate y emmental",
+  "Amb salsa gorgonzola": "En salsa gorgonzola",
+  "Farcits de formatge i nous amb crema de gorgonzola": "Rellenos de queso y nueces con crema de gorgonzola",
+  "Farcits de foie amb crema de parmesà i oli de trufa": "Rellenos de foie con crema de parmesano y aceite de trufa",
+  "Farcits de vieira i llagostí amb crema de gambes": "Rellenos de vieira y langostino con crema de gambas",
+  "Farcits de carn amb salsa de tomàquet": "Rellenos de carne con salsa de tomate",
+  "Amb all i julivert": "Con ajo y perejil",
+  "Amb verduretes saltades amb soja": "Con verduritas salteadas con soja",
+  "Amb picada d'ametlla": "Con picadura de almendra",
+  "Les pizzes": "Las pizzas",
+  "Tomàquet, mozzarella, pernil dolç, xampinyons, carxofes, salami i olives": "Tomate, mozzarella, jamón dulce, champiñones, alcachofas, salami y aceitunas",
+  "Tomàquet, mozzarella i bacó": "Tomate, mozzarella y beicon",
+  "Tomàquet, mozzarella i salami picant": "Tomate, mozzarella y salami picante",
+  "Tomàquet, mozzarella, patata caliu, brie, parmesà i all i oli": "Tomate, mozzarella, patata calidez, brie, parmesano y ajo y aceite",
+  "Tomàquet, mozzarella, ceba caramel-litzada i formatge de cabra": "Tomate, mozzarella, cebolla caramelizada y queso de cabra",
+  "Tomàquet, mozzarella, pernil dolç, salami picant, butifarra i bacó": "Tomate, mozzarella, jamón dulce, salami picante, butifarra y beicon",
+  "Tomàquet, mozzarella, butifarra, pebrot i ceba escalivats": "Tomate, mozzarella, butifarra, pimiento y cebolla escalivados",
+  "Tomàquet, mozzarella i xampinyons": "Tomate, mozzarella y champiñones",
+  "Tomàquet, mozzarella, carn de vedella, salami picant, bitxo i salsa inferno": "Tomate, mozzarella, carne de ternera, salami picante, guindilla y salsa inferno",
+  "Tomàquet, mozzarella, musclos, gambes, calamars i cloïses": "Tomate, mozzarella, mejillones, gambas, calamares y almejas",
+  "Tomàquet, mozzarella, tonyina, anxoves, pebrot vermell, ceba i olives": "Tomate, mozzarella, atún, anchoas, pimiento rojo, cebolla y aceitunas",
+  "Tomàquet, mozzarella, pernil salat, encenalls parmesà i rúcula": "Tomate, mozzarella, jamón salado, virutas parmesano y rúcula",
+  "Tomàquet, mozzarella i pernil dolç": "Tomate, mozzarella y jamón dulce",
+  "Tomàquet, mozzarella, pernil dolç i xampinyons": "Tomate, mozzarella, jamón dulce y champiñones",
+  "Tomàquet, mozzarella, anxoves, tàperes i olives": "Tomate, mozzarella, anchoas, alcaparras y aceitunas",
+  "Tomàquet, mozzarella, botifarra, tomàquet fresc, ceba i roquefort": "Tomate, mozzarella, butifarra, tomate fresco, cebolla y roquefort",
+  "Tomàquet, mozzarella i frankfurt": "Tomate, mozzarella y frankfurt",
+  "Tomàquet, mozzarella, tonyina i ceba": "Tomate, mozzarella, atún y cebolla",
+  "Tomàquet, mozzarella, albergínia, carbassó, xampinyons, pebrot vermell, pebrot verd i olives": "Tomate, mozzarella, berenjena, calabacín, champiñones, pimiento rojo, pimiento verde y aceitunas",
+  "Prosciutto, bacó, pernil, salami, tonyina, anxoves, carxofes, gorgonzola, roquefort, brie, cabra o mozzarella": "Prosciutto, bacon, jamón, salami, atún, anchoas, alcachofas, gorgonzola, roquefort, brie, cabra o mozzarella",
+  "Pollastre, carn vedella, butifarra, ceps, salmó o calamars": "Pollo, carne ternera, butifarra, setas, salmón o calamares",
+  "Mozzarella búfala o gambes": "Mozzarella búfala o gambas",
+  "Reste ingredients": "Reste ingredientes",
+  "Pizza tipus CALZONE o pizza meitat/meitat": "Pizza tipo CALZONE o pizza mitad/mitad",
+  "Pizza SENSE GLUTEN": "Pizza SIN GLUTEN",
+  "Les pizzes gourmet": "Las pizzas gourmet",
+  "Tomàquet, mozzarella, burrata, rúcula, tomàquet sec i olivada": "Tomate, mozzarella, burrata, rúcula, tomate seco y olivada",
+  "Tomàquet, mozzarella. Porchetta (lligat de carn de porc rostida amb herbes aromàtiques) i poma caramel-litzada.": "Tomate, mozzarella. Porchetta (ligado de carne de cerdo asada con hierbas aromáticas) y manzana caramelizada.",
+  "Crema de tòfuna, mozzarella, ceps i xampinyons": "Crema de trufa, mozzarella, setas y champiñones",
+  "Tomàquet, mozzarella, mortadela D.O., burratina, crema i cruixent de festucs": "Tomate, mozzarella, mortadela D.O., burratina, crema y crujiente de pistachos",
+  "Les pizzes veganes": "Las pizzas veganas",
+  "Tomàquet, mozzarella vegana, albergínia, ceba caremel-litzada, xerris i oli d'alfàbrega": "Tomate, mozzarella vegana, berenjena, cebolla caremelizada, charles y aceite de albahaca",
+  "Tomàquet, mozzarella vegana, patata caliu llaminada, pebrot i ceba escalivats i salsa pesto": "Tomate, mozzarella vegana, patata rescoldo laminada, pimiento y cebolla escalivados y salsa pesto",
+  "Suggeriments": "Sugerencias",
+  "Escarola, bacallà, tonyina, anxoves i salsa xató": "Escarola, bacalao, atún, anchoas y salsa xató",
+  "Amb salsa tàrtara": "En salsa tártara",
+  "Tomàquet, mozzarella, pulled pork i la seva salsa": "Tomate, mozzarella, pulled pork y su salsa",
+  "Amb mantega a les fines herbes i torradetes lingüini": "Con mantequilla en las finas hierbas y tostaditas lingüinas",
+  "Ingredients extra": "Ingredientes extra"
+ },
+ "etiquetes": {
+  "croquetes": [],
+  "les nostres braves": [],
+  "carpaccio de bou": [],
+  "delicies": [
+   "v"
+  ],
+  "bombes": [],
+  "fletxes de pollastre": [],
+  "calamarcets a l andalusa": [],
+  "timbal": [
+   "v"
+  ],
+  "la provoletta": [
+   "v"
+  ],
+  "tartar de salmo fumat": [],
+  "la burrata di apulia": [
+   "v"
+  ],
+  "la caprese": [
+   "v"
+  ],
+  "mixta": [],
+  "trentina": [],
+  "siena": [],
+  "pisa": [
+   "v"
+  ],
+  "cesar": [],
+  "xato": [],
+  "focaccia": [
+   "v"
+  ],
+  "pa de coca torrat": [
+   "v"
+  ],
+  "pa de coca torrat amb tomaquet": [
+   "v"
+  ],
+  "spaghetti frutti di mare": [],
+  "spaghetti vongole": [],
+  "spaghetti capriccio": [],
+  "spaghetti tartufo": [
+   "v"
+  ],
+  "spaghetti": [],
+  "rigatoni amb calamars": [],
+  "rigatoni portofino": [
+   "v"
+  ],
+  "rigatoni pesto": [
+   "v"
+  ],
+  "garganelli nonna": [],
+  "garganelli salmone": [],
+  "garganelli arrabbiata": [
+   "hot"
+  ],
+  "gnocchi": [
+   "v"
+  ],
+  "lasagna": [],
+  "lunette": [],
+  "fiocchi": [
+   "v"
+  ],
+  "ravioloni": [
+   "v"
+  ],
+  "ravioli funghi": [
+   "v"
+  ],
+  "raviolaccio": [],
+  "bottoni": [],
+  "risotto de ceps": [
+   "v"
+  ],
+  "risotto de gambes": [],
+  "apulia": [
+   "v"
+  ],
+  "ariccia": [],
+  "pompeia": [],
+  "regina": [],
+  "tartufata": [
+   "v"
+  ],
+  "toscana": [],
+  "vesubi": [],
+  "venecia": [],
+  "vulcano": [],
+  "margherita": [
+   "v"
+  ],
+  "margherita amb un ingredient": [],
+  "4 formaggi": [
+   "v"
+  ],
+  "4 stagioni": [],
+  "abate": [
+   "v"
+  ],
+  "abruzzo": [],
+  "anglesa": [],
+  "barbacoa": [],
+  "boscaiola": [
+   "v"
+  ],
+  "bufala": [
+   "v"
+  ],
+  "caliu": [
+   "v"
+  ],
+  "capra": [
+   "v"
+  ],
+  "carbonara": [],
+  "capricciosa": [
+   "v"
+  ],
+  "catalana": [],
+  "etna": [],
+  "fiorentina": [],
+  "fontana": [],
+  "inferno": [
+   "hot"
+  ],
+  "lido": [],
+  "mallorquina": [],
+  "mareggiata": [],
+  "mediterranea": [],
+  "noruega": [],
+  "palermo": [],
+  "parma": [],
+  "parmigiana": [
+   "v"
+  ],
+  "prosciutto e funghi": [],
+  "stromboli": [],
+  "tropical": [],
+  "vegetal": [
+   "v"
+  ],
+  "zucchini": [],
+  "delicia vegana": [
+   "vg"
+  ],
+  "calamarcets a la planxa": [],
+  "suprema de salmo": [],
+  "llenguado": [],
+  "galtes de porc": [],
+  "peus de porc": [],
+  "galta a baixa temperatura": []
+ }
+}

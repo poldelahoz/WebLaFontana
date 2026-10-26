@@ -1,0 +1,69 @@
+{
+ "min_plats": 20,
+ "fulls_ignorats": [],
+ "pestanyes": [
+  {
+   "id": "antipasti",
+   "it": "Antipasti & Insalate",
+   "sub": { "ca": "Entrants i amanides", "es": "Entrantes y ensaladas" },
+   "paraules": ["picar", "entrant", "compartir", "amanid", "focaccia", "pa de coca"]
+  },
+  {
+   "id": "paste",
+   "it": "Le Paste & Risotti",
+   "sub": { "ca": "Pastes i risottos", "es": "Pastas y risottos" },
+   "paraules": ["pasta", "pastes", "risotto"]
+  },
+  {
+   "id": "pizze",
+   "it": "Le Pizze",
+   "sub": { "ca": "Gourmet i de sempre", "es": "Gourmet y clásicas" },
+   "paraules": ["pizz"]
+  },
+  {
+   "id": "secondi",
+   "it": "Secondi",
+   "sub": { "ca": "Peix i carn", "es": "Pescado y carne" },
+   "paraules": ["peix", "carn", "segon"]
+  },
+  {
+   "id": "suggeriments",
+   "it": "Suggerimenti",
+   "sub": { "ca": "Fora de carta", "es": "Fuera de carta" },
+   "paraules": ["suggeriment", "fora de carta"]
+  },
+  {
+   "id": "dolci",
+   "it": "Dolci Artigianali",
+   "sub": { "ca": "Postres", "es": "Postres" },
+   "paraules": ["postre", "dolç", "dolc"]
+  }
+ ],
+ "correccions_noms": {
+  "spaguetti": "spaghetti",
+  "fromaggi": "formaggi",
+  "stazioni": "stagioni",
+  "arrabiata": "arrabbiata",
+  "mareggiatta": "mareggiata",
+  "capresse": "caprese",
+  "parmeggiana": "parmigiana",
+  "nona": "nonna",
+  "raviolis": "ravioli"
+ },
+ "correccions_es": {
+  "charly": "cherry",
+  "picadura de almendra": "picada de almendra",
+  "vimagreta": "vinagreta",
+  "Reste ingredientes": "Resto de ingredientes",
+  "semi fundido": "semifundido"
+ },
+ "paraules_vega":["vegana", "vegà", "vegan"],
+ "paraules_picant": ["bitxo", "inferno", "arrabbiata", "arrabiata", "picantona"],
+ "paraules_carn_peix": [
+  "pernil", "bacó", "bacon", "pollastre", "vedella", "porc", "galta", "galtes", "peus", "salami", "frankfurt",
+  "butifarra", "botifarra", "bull negre", "sobrassada", "mortadel", "pulled pork", "porchetta", "ànec", "anec",
+  "foie", "carn", "croquet", "crestes", "prosciutto", "bolognes", "bolonyes", "carbonara",
+  "tonyina", "anxov", "salmó", "gamb", "calamar", "musclo", "cloïs", "llagost", "vieira", "bacallà", "llenguado",
+  "peix", "marinera", "frutti", "vongole", "xató", "tonno", "bombes"
+ ]
+}
