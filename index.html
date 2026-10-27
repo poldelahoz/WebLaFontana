@@ -24,6 +24,20 @@
 
   <script>document.documentElement.classList.replace('no-js', 'js');</script>
 
+  <!-- Google Analytics (Consent Mode v2): gtag.js només es carrega si l'usuari accepta (app.js) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied'
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-3SH8Q0SKWM');
+  </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -509,14 +523,27 @@
 
     <div class="container site-footer__bottom">
       <p>© <span data-year>2026</span> Restaurant La Fontana. <span data-i18n="footer.rights">Tots els drets reservats.</span></p>
-      <!-- TODO: enllaçar les pàgines legals quan existeixin -->
       <ul class="legal-links">
-        <li><a href="#" data-i18n="footer.legal">Avís legal</a></li>
-        <li><a href="#" data-i18n="footer.privacy">Privacitat</a></li>
-        <li><a href="#" data-i18n="footer.cookies">Cookies</a></li>
+        <li><a href="avis-legal.html" data-i18n="footer.legal">Avís legal</a></li>
+        <li><a href="privacitat.html" data-i18n="footer.privacy">Privacitat</a></li>
+        <li><a href="#cookies" data-cookie-settings data-i18n="footer.cookies">Cookies</a></li>
       </ul>
     </div>
   </footer>
+
+  <!-- ============ BÀNER DE COOKIES ============ -->
+  <section class="cookie-banner" id="cookies" data-cookie-banner role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-text" hidden>
+    <h2 class="cookie-banner__title" id="cookie-title" data-i18n="cookies.title">Utilitzem cookies</h2>
+    <p class="cookie-banner__text" id="cookie-text" data-i18n="cookies.text">Amb el teu permís, fem servir cookies de Google Analytics per saber com es fa servir la web i millorar-la. No les fem servir per a publicitat.</p>
+    <details class="cookie-banner__details">
+      <summary data-i18n="cookies.more">Més informació</summary>
+      <p data-i18n-html="cookies.detail">Les cookies <code>_ga</code> i <code>_ga_*</code> les instal·la Google Analytics (Google Ireland Ltd.) i duren fins a 2 anys. Només s'activen si acceptes. Pots canviar la teva elecció quan vulguis des de l'enllaç «Cookies» del peu de pàgina. <a href="privacitat.html#cookies">Política de privacitat i cookies</a>.</p>
+    </details>
+    <div class="cookie-banner__actions">
+      <button type="button" class="btn btn--outline btn--sm" data-cookie-choice="denied" data-i18n="cookies.reject">Rebutjar</button>
+      <button type="button" class="btn btn--primary btn--sm" data-cookie-choice="granted" data-i18n="cookies.accept">Acceptar</button>
+    </div>
+  </section>
 
   <!-- ============ STICKY CTA (mòbil) ============ -->
   <div class="mobile-cta" data-mobile-cta>

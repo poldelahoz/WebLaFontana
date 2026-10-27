@@ -143,7 +143,14 @@
       'footer.rights': 'Tots els drets reservats.',
       'footer.legal': 'Avís legal',
       'footer.privacy': 'Privacitat',
-      'footer.cookies': 'Cookies'
+      'footer.cookies': 'Cookies',
+
+      'cookies.title': 'Utilitzem cookies',
+      'cookies.text': 'Amb el teu permís, fem servir cookies de Google Analytics per saber com es fa servir la web i millorar-la. No les fem servir per a publicitat.',
+      'cookies.more': 'Més informació',
+      'cookies.detail': "Les cookies <code>_ga</code> i <code>_ga_*</code> les instal·la Google Analytics (Google Ireland Ltd.) i duren fins a 2 anys. Només s'activen si acceptes. Pots canviar la teva elecció quan vulguis des de l'enllaç «Cookies» del peu de pàgina. <a href=\"privacitat.html#cookies\">Política de privacitat i cookies</a>.",
+      'cookies.reject': 'Rebutjar',
+      'cookies.accept': 'Acceptar'
     },
 
     es: {
@@ -278,7 +285,14 @@
       'footer.rights': 'Todos los derechos reservados.',
       'footer.legal': 'Aviso legal',
       'footer.privacy': 'Privacidad',
-      'footer.cookies': 'Cookies'
+      'footer.cookies': 'Cookies',
+
+      'cookies.title': 'Usamos cookies',
+      'cookies.text': 'Con tu permiso, usamos cookies de Google Analytics para saber cómo se usa la web y mejorarla. No las usamos para publicidad.',
+      'cookies.more': 'Más información',
+      'cookies.detail': 'Las cookies <code>_ga</code> y <code>_ga_*</code> las instala Google Analytics (Google Ireland Ltd.) y duran hasta 2 años. Solo se activan si aceptas. Puedes cambiar tu elección cuando quieras desde el enlace «Cookies» del pie de página. <a href="privacitat.html#cookies">Política de privacidad y cookies</a>.',
+      'cookies.reject': 'Rechazar',
+      'cookies.accept': 'Aceptar'
     }
   };
 
@@ -723,6 +737,68 @@
   };
 
   /* -------------------------------------------------------
+     11. Cookies: Google Analytics només amb consentiment
+         (els valors per defecte de Consent Mode són al <head>)
+     ------------------------------------------------------- */
+  const GA_ID = 'G-3SH8Q0SKWM';
+  const CONSENT_KEY = 'lafontana-cookies';
+
+  const loadAnalytics = () => {
+    if (document.querySelector('script[data-ga]')) return;
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+    script.dataset.ga = '';
+    document.head.append(script);
+  };
+
+  const clearAnalyticsCookies = () => {
+    const domain = window.location.hostname.replace(/^www\./, '');
+    document.cookie.split(';')
+      .map((c) => c.split('=')[0].trim())
+      .filter((name) => name === '_ga' || name.startsWith('_ga_'))
+      .forEach((name) => {
+        [domain, `.${domain}`, ''].forEach((d) => {
+          document.cookie = `${name}=; Max-Age=0; path=/${d ? `; domain=${d}` : ''}`;
+        });
+      });
+  };
+
+  const applyConsent = (choice) => {
+    const granted = choice === 'granted';
+    window.gtag?.('consent', 'update', { analytics_storage: granted ? 'granted' : 'denied' });
+    if (granted) loadAnalytics();
+    else clearAnalyticsCookies();
+  };
+
+  const initCookies = () => {
+    const banner = $('[data-cookie-banner]');
+    if (!banner) return;
+
+    const stored = storage.get(CONSENT_KEY);
+    if (stored === 'granted' || stored === 'denied') applyConsent(stored);
+    // "#cookies" arriba des de la pàgina de privacitat per canviar l'elecció
+    if (!stored || window.location.hash === '#cookies') banner.hidden = false;
+
+    $$('[data-cookie-choice]', banner).forEach((btn) => {
+      btn.addEventListener('click', () => {
+        storage.set(CONSENT_KEY, btn.dataset.cookieChoice);
+        applyConsent(btn.dataset.cookieChoice);
+        banner.hidden = true;
+      });
+    });
+
+    $$('[data-cookie-settings]').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // skip the smooth-scroll handler
+        banner.hidden = false;
+        $('[data-cookie-choice="granted"]', banner)?.focus();
+      });
+    });
+  };
+
+  /* -------------------------------------------------------
      Init
      ------------------------------------------------------- */
   const init = () => {
@@ -733,6 +809,7 @@
     initReveal();
     initPrint();
     initCopyPhone();
+    initCookies();
     setInterval(updateOpeningStatus, 60 * 1000);
   };
 

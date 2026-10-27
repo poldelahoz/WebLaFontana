@@ -1359,6 +1359,64 @@ address { font-style: normal; }
 .mobile-cta__btn .icon { width: 20px; height: 20px; }
 .mobile-cta__btn--primary { background: var(--c-pomodoro); }
 
+/* ---------- 13b. Cookie banner ---------- */
+.cookie-banner {
+  position: fixed;
+  left: var(--gutter);
+  right: var(--gutter-r);
+  bottom: calc(var(--sp-4) + env(safe-area-inset-bottom, 0px));
+  z-index: 95;
+  max-width: 440px;
+  padding: var(--sp-5);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius);
+  background: var(--c-flour);
+  box-shadow: var(--shadow-lift);
+  font-size: var(--fs-sm);
+  animation: rise var(--dur) var(--ease);
+}
+.cookie-banner[hidden] { display: none; }
+.cookie-banner__title {
+  margin: 0 0 var(--sp-2);
+  font-family: var(--f-display);
+  font-size: var(--fs-lg);
+  line-height: 1.2;
+  color: var(--c-espresso);
+}
+.cookie-banner__text { margin: 0 0 var(--sp-3); }
+.cookie-banner__details { margin-bottom: var(--sp-4); color: var(--c-ink-soft); }
+.cookie-banner__details summary { cursor: pointer; font-weight: 600; color: var(--c-ink); }
+.cookie-banner__details p { margin: var(--sp-2) 0 0; }
+.cookie-banner__details a { color: var(--c-pomodoro); text-decoration: underline; text-underline-offset: 2px; }
+.cookie-banner__actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--sp-2); }
+
+/* ---------- 13c. Legal pages ---------- */
+.legal {
+  max-width: 820px;
+  padding-top: calc(var(--header-h) + env(safe-area-inset-top, 0px) + var(--sp-7));
+  padding-bottom: var(--sp-8);
+}
+.legal h1 { font-size: var(--fs-2xl); color: var(--c-espresso); }
+.legal h2 { margin: var(--sp-7) 0 var(--sp-3); font-size: var(--fs-xl); color: var(--c-espresso); }
+.legal h3 { margin: var(--sp-5) 0 var(--sp-2); font-size: var(--fs-lg); color: var(--c-espresso); }
+.legal p,
+.legal ul { margin: 0 0 var(--sp-4); }
+.legal ul { padding-left: 1.2rem; }
+.legal a:not(.btn) { color: var(--c-pomodoro); text-decoration: underline; text-underline-offset: 2px; overflow-wrap: anywhere; }
+.legal__back { display: inline-block; margin-bottom: var(--sp-4); font-size: var(--fs-sm); }
+.legal__updated { color: var(--c-ink-soft); font-size: var(--fs-sm); }
+.legal__data { list-style: none; padding: var(--sp-5) !important; border: 1px solid var(--c-line); border-radius: var(--radius); background: var(--c-flour-deep); }
+.legal__data li + li { margin-top: var(--sp-1); }
+.legal__note { color: var(--c-ink-soft); font-size: var(--fs-sm); }
+.legal__table-wrap { overflow-x: auto; margin-bottom: var(--sp-4); }
+.legal__table { width: 100%; min-width: 520px; border-collapse: collapse; font-size: var(--fs-sm); }
+.legal__table th,
+.legal__table td { padding: var(--sp-2) var(--sp-3); border-bottom: 1px solid var(--c-line); text-align: left; vertical-align: top; }
+.legal__table th { color: var(--c-espresso); }
+.legal mark.pending { padding: 0 .2em; border-radius: 3px; background: #FFE58A; color: var(--c-ink); }
+.site-footer--compact { padding-top: 0; padding-bottom: calc(var(--sp-5) + env(safe-area-inset-bottom, 0px)); }
+.site-footer--compact .site-footer__bottom { border-top: 0; }
+
 /* ---------- 14. Reveal on scroll ---------- */
 /* Content stays visible without JS; JS adds .js to <html> and only then animates. */
 .js .reveal {
@@ -1558,6 +1616,7 @@ address { font-style: normal; }
   .contact,
   .site-footer,
   .mobile-cta,
+  .cookie-banner,
   .skip-link,
   .menu__tabs-wrap,
   .menu__actions,
