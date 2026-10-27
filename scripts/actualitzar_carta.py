@@ -10,7 +10,10 @@ El full no té columnes fixes: s'interpreta com el llegiria una persona.
   - Dues o més files buides seguides sense títol obren un grup nou sense títol.
 
 Ús:
-  python scripts/actualitzar_carta.py <full.xlsx|full.xls> [--out carta.js] [--sense-traduccio]
+  python scripts/actualitzar_carta.py <full.xlsx|full.xls> [--tipus carta|postres] [--out carta.js] [--sense-traduccio]
+
+Amb --tipus postres es llegeix el full de postres: tot va a la pestanya de postres, els noms
+es tradueixen i el resultat s'escriu a postres.js (window.POSTRES).
 
 Surt amb codi 1 (sense escriure res) si la carta resultant sembla incorrecta.
 """
@@ -355,7 +358,7 @@ def build(sheets, cfg, dictionary, tr: Translator):
         for ev in parse_sheet(rows):
             kind = ev[0]
             if kind == "header":
-                title = sentence(" ".join(ev[1]))
+                title = sentence(" ".join(ev[1])).rstrip(" .…")
                 current_tab = tab_for(title) or current_tab
                 new_group(title)
             elif kind == "gap":
@@ -370,13 +373,13 @@ def build(sheets, cfg, dictionary, tr: Translator):
                     new_group()
                 key = norm_key(name, fixes)
                 known = dictionary["noms"].get(key)
-                item = {"n": known if known else name, "p": round(price, 2)}
+                item = {"n": known if known else (bi(name, tr) if cfg.get("traduir_noms") else name), "p": round(price, 2)}
                 if desc:
                     item["d"] = bi(desc, tr)
                 if unit:
                     item["u"] = unit
                 tags = dictionary["etiquetes"].get(key)
-                if tags is None:
+                if tags is None and cfg.get("etiquetes_auto", True):
                     tags = auto_tags(name, desc, cfg)
                 if tags:
                     item["t"] = tags
@@ -394,6 +397,11 @@ def build(sheets, cfg, dictionary, tr: Translator):
     categories = []
     for tid in order:
         tab = tabs[tid]
+        if cfg.get("titols_sols_com_nota"):
+            # "XARRUPS, COPES, TUBS ...." sense plats a sota: nota del grup anterior
+            for prev, g in zip(tab["groups"], tab["groups"][1:]):
+                if not (g["items"] or g.get("extras")) and g["title"] and prev["items"] and "note" not in prev:
+                    prev["note"] = g["title"]
         tab["groups"] = [g for g in tab["groups"] if g["items"] or g.get("extras")]
         for g in tab["groups"]:
             if g["title"] is None:
@@ -422,10 +430,10 @@ def validate(categories, stats, cfg):
 
 # ---------------------------------------------------------------- sortida
 
-def read_existing(out: Path):
+def read_existing(out: Path, var: str = "CARTA"):
     if not out.exists():
         return None
-    m = re.search(r"window\.CARTA\s*=\s*(\{.*\});?\s*$", out.read_text(encoding="utf-8"), re.S)
+    m = re.search(rf"window\.{var}\s*=\s*(\{{.*\}});?\s*$", out.read_text(encoding="utf-8"), re.S)
     return json.loads(m.group(1)) if m else None
 
 
@@ -475,8 +483,8 @@ def compare(old_categories, new_categories) -> str:
     return "\n".join(lines) + "\n"
 
 
-def write_carta(out: Path, categories, source: str):
-    existing = read_existing(out)
+def write_carta(out: Path, categories, source: str, var: str = "CARTA"):
+    existing = read_existing(out, var)
     if existing and existing.get("categories") == categories:
         return False
     data = {
@@ -488,7 +496,7 @@ def write_carta(out: Path, categories, source: str):
     out.write_text(
         "/* Generat automàticament per scripts/actualitzar_carta.py a partir del full de càlcul.\n"
         "   No l'editis a mà: els canvis es perdrien a la propera actualització. */\n"
-        f"window.CARTA = {body};\n",
+        f"window.{var} = {body};\n",
         encoding="utf-8",
     )
     return True
@@ -499,7 +507,8 @@ def main(argv=None):
     sys.stderr.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser()
     ap.add_argument("workbook", type=Path)
-    ap.add_argument("--out", type=Path, default=HERE.parent / "carta.js")
+    ap.add_argument("--tipus", choices=["carta", "postres"], default="carta")
+    ap.add_argument("--out", type=Path, help="per defecte carta.js o postres.js segons --tipus")
     ap.add_argument("--sense-traduccio", action="store_true", help="no crida el traductor automàtic")
     ap.add_argument("--resum", action="store_true", help="mostra la carta interpretada per pantalla")
     ap.add_argument("--prova", action="store_true", help="no escriu cap fitxer; només informa dels canvis")
@@ -507,6 +516,10 @@ def main(argv=None):
     args = ap.parse_args(argv)
 
     cfg = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
+    if args.tipus == "postres":
+        cfg = {**cfg, **cfg["postres"]}
+    var = args.tipus.upper()
+    args.out = args.out or HERE.parent / f"{args.tipus}.js"
     dictionary = json.loads(DICT_PATH.read_text(encoding="utf-8"))
     dictionary.setdefault("textos_auto", {})
 
@@ -533,7 +546,7 @@ def main(argv=None):
                     print(f"     + {e['p']:.2f}  {d[:80]}")
 
     errors = validate(categories, stats, cfg)
-    report_head = f"## Carta llegida del full: {stats['plats']} plats\n\n"
+    report_head = f"## {'Postres llegits' if args.tipus == 'postres' else 'Carta llegida'} del full: {stats['plats']} plats\n\n"
     if errors:
         print("La carta NO s'ha actualitzat:", *errors, sep="\n  - ", file=sys.stderr)
         if args.informe:
@@ -541,7 +554,7 @@ def main(argv=None):
                 f.write(report_head + "**ERROR: la carta no es publica.**\n\n" + "\n".join(f"- {e}" for e in errors) + "\n")
         return 1
 
-    existing = read_existing(args.out)
+    existing = read_existing(args.out, var)
     report = compare(existing.get("categories") if existing else None, categories)
     print(report)
     if args.informe:
@@ -555,7 +568,7 @@ def main(argv=None):
 
     if tr.new:
         DICT_PATH.write_text(json.dumps(dictionary, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    changed = write_carta(args.out, categories, args.workbook.name)
+    changed = write_carta(args.out, categories, args.workbook.name, var)
     print(f"{stats['plats']} plats · {tr.new} traduccions noves · carta {'ACTUALITZADA' if changed else 'sense canvis'}")
     return 0
 

@@ -1,11 +1,13 @@
 name: Actualitzar la carta
 
-# Descarrega el full de càlcul de Google, el converteix en carta.js i, si ha canviat, el publica.
+# Descarrega els fulls de càlcul de Google de la carta i dels postres, els converteix en
+# carta.js i postres.js i, si han canviat, els publica.
 #
 # Configuració (Settings → Secrets and variables → Actions → Variables):
-#   CARTA_SHEET_ID  identificador del full (docs.google.com/spreadsheets/d/<ID>/edit).
-#                   El full ha d'estar compartit com a "Qualsevol persona amb l'enllaç: lector".
-#   CARTA_PUBLICAR  "si" perquè les execucions automàtiques publiquin els canvis.
+#   CARTA_SHEET_ID    identificador del full de la carta (docs.google.com/spreadsheets/d/<ID>/edit).
+#   POSTRES_SHEET_ID  identificador del full dels postres. Sense definir = no es llegeixen.
+#                     Els fulls han d'estar compartits com a "Qualsevol persona amb l'enllaç: lector".
+#   CARTA_PUBLICAR    "si" perquè les execucions automàtiques publiquin els canvis (carta i postres).
 #                   Qualsevol altre valor (o sense definir) = aturat: no es llegeix ni es publica res.
 #
 # Execució manual (Actions → Actualitzar la carta → Run workflow):
@@ -39,6 +41,7 @@ jobs:
     timeout-minutes: 10
     env:
       SHEET_ID: ${{ vars.CARTA_SHEET_ID }}
+      POSTRES_SHEET_ID: ${{ vars.POSTRES_SHEET_ID }}
     steps:
       - uses: actions/checkout@v4
 
@@ -58,6 +61,7 @@ jobs:
           fi
           echo "mode=$mode" >> "$GITHUB_OUTPUT"
           echo "Mode: $mode"
+          echo "MODE_FLAG=$([ "$mode" = "prova" ] && echo --prova)" >> "$GITHUB_ENV"
           if [ "$mode" = "aturat" ]; then
             echo "Actualització automàtica aturada (la variable CARTA_PUBLICAR no és \"si\"). No es llegeix el full." >> "$GITHUB_STEP_SUMMARY"
           fi
@@ -76,33 +80,40 @@ jobs:
         if: steps.mode.outputs.mode != 'aturat'
         run: pip install -r scripts/requirements.txt
 
-      - name: Descarregar el full de càlcul
+      - name: Descarregar el full de la carta
         if: steps.mode.outputs.mode != 'aturat'
         run: |
           test -n "$SHEET_ID" || { echo "::error::Falta la variable CARTA_SHEET_ID"; exit 1; }
           curl -fsSL "https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=xlsx" -o carta.xlsx
           # Si el full no és públic, Google retorna una pàgina HTML d'inici de sessió en lloc de l'Excel
-          file carta.xlsx | grep -qiE "zip|excel|microsoft" || { echo "::error::El full no és accessible. Comprova que estigui compartit amb 'Qualsevol persona amb l'enllaç'."; exit 1; }
+          file carta.xlsx | grep -qiE "zip|excel|microsoft" || { echo "::error::El full de la carta no és accessible. Comprova que estigui compartit amb 'Qualsevol persona amb l'enllaç'."; exit 1; }
 
       - name: Llegir la carta
         if: steps.mode.outputs.mode != 'aturat'
-        env:
-          MODE: ${{ steps.mode.outputs.mode }}
+        run: python scripts/actualitzar_carta.py carta.xlsx --out carta.js --informe "$GITHUB_STEP_SUMMARY" $MODE_FLAG
+
+      # Els postres van a part: s'actualitzen encara que la carta hagi fallat, i al revés.
+      - name: Descarregar el full dels postres
+        id: postres
+        if: ${{ !cancelled() && steps.mode.outputs.mode != 'aturat' && env.POSTRES_SHEET_ID != '' }}
         run: |
-          extra=""
-          [ "$MODE" = "prova" ] && extra="--prova"
-          python scripts/actualitzar_carta.py carta.xlsx --out carta.js --informe "$GITHUB_STEP_SUMMARY" $extra
+          curl -fsSL "https://docs.google.com/spreadsheets/d/${POSTRES_SHEET_ID}/export?format=xlsx" -o postres.xlsx
+          file postres.xlsx | grep -qiE "zip|excel|microsoft" || { echo "::error::El full dels postres no és accessible. Comprova que estigui compartit amb 'Qualsevol persona amb l'enllaç'."; exit 1; }
+
+      - name: Llegir els postres
+        if: ${{ !cancelled() && steps.postres.outcome == 'success' }}
+        run: python scripts/actualitzar_carta.py postres.xlsx --tipus postres --out postres.js --informe "$GITHUB_STEP_SUMMARY" $MODE_FLAG
 
       - name: Publicar si hi ha canvis
         id: commit
-        if: steps.mode.outputs.mode == 'publicar'
+        if: ${{ !cancelled() && steps.mode.outputs.mode == 'publicar' }}
         run: |
-          if git diff --quiet -- carta.js scripts/carta-diccionari.json; then
+          if git diff --quiet -- carta.js postres.js scripts/carta-diccionari.json; then
             echo "La carta no ha canviat."
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          git add carta.js scripts/carta-diccionari.json
+          git add carta.js postres.js scripts/carta-diccionari.json
           git commit -m "Carta actualitzada des del full de càlcul"
           git pull --rebase --autostash --quiet
           git push

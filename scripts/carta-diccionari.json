@@ -265,7 +265,10 @@
   "Filetejades a la planxa": "Fileteadas a la plancha",
   "A la planxa amb picada d'ametlla": "A la plancha con picada de almendra",
   "Amb salsa de bolets i reducció de vi": "Con salsa de setas y reducción de vino",
-  "Ingredient extra": "Ingrediente extra"
+  "Ingredient extra": "Ingrediente extra",
+  "Les postres de casa": "Los postres de la casa",
+  "Xarrups, copes, tubs": "Chupitos, copas, tubos",
+  "Gin Tònic": "Gin-tonic"
  },
  "textos_auto": {
   "Assortiment de pernil ibèric, pollastre rostit i ceps amb foie": "Surtido de jamón ibérico, pollo asado y setas con foie",
@@ -362,7 +365,24 @@
   "Prosciutto, bacó, salami picant, tonyina, carxofes, gorgonzola, roquefort, brie, cabra, mozzarella, frankfurt": "Prosciutto, bacon, salami picante, atún, alcachofas, gorgonzola, roquefort, brie, cabra, mozzarella, frankfurt",
   "Pollastre, carn vedella, butifarra, ceps, salmó,calamars, pernil salat, anxoves, pulled pork, mortadela, bull negre": "Pollo, carne ternera, butifarra, setas, salmón, calamares, jamón salado, anchoas, pulled pork, mortadela, hervor negro",
   "Mozzarella búfala, burratina, gambes, foie, pernil ànec, confit d'ànec": "Mozzarella búfala, burratina, gambas, foie, jamón pato, peladilla de pato",
-  "Masa de pizza SENSE GLUTEN": "Masa de pizza SIN GLUTEN"
+  "Masa de pizza SENSE GLUTEN": "Masa de pizza SIN GLUTEN",
+  "El nostre Tiramisú": "Nuestro Tiramisú",
+  "Panna Cotta": "Panna Cotta",
+  "Amb coulis de fruits vermells, xocolata o caramel": "Con coulis de frutos rojos, chocolate o caramelo",
+  "Pastís de Formatge": "Pastel de Queso",
+  "Valencià": "Valenciano",
+  "Suc de taronja natural i gelat de vainilla": "Zumo de naranja natural y helado de vainilla",
+  "Crep amb Nutella": "Crepe con Nutella",
+  "Coulant de xocolata negra": "Coulant de chocolate negro",
+  "Amb gelat de vainilla": "Con helado de vainilla",
+  "Cannoli Sicilià farcit de ricotta i crema de festucs": "Cannoli Siciliano relleno de ricotta y crema de pistachos",
+  "Trufes de xocolata negra": "Trufas de chocolate negro",
+  "Cafè Irlandès": "Café Irlandés",
+  "Cafè Escocès": "Café Escocés",
+  "Els gelats italians": "Los helados italianos",
+  "Gelat de xocolata, vainilla, mango, straciatella, coco o festucs": "Helado de chocolate, vainilla, mango, straciatella, coco o pistachos",
+  "Sorbet de llimona, mandarina o cirera": "Sorbete de limón, mandarina o cereza",
+  "Per acabar": "Para terminar"
  },
  "etiquetes": {
   "croquetes": [],

@@ -39,6 +39,20 @@
    "paraules": ["postre", "dolç", "dolc"]
   }
  ],
+ "postres": {
+  "min_plats": 3,
+  "pestanyes": [
+   {
+    "id": "dolci",
+    "it": "Dolci Artigianali",
+    "sub": { "ca": "Postres", "es": "Postres" },
+    "paraules": []
+   }
+  ],
+  "traduir_noms": true,
+  "etiquetes_auto": false,
+  "titols_sols_com_nota": true
+ },
  "correccions_noms": {
   "spaguetti": "spaghetti",
   "fromaggi": "formaggi",

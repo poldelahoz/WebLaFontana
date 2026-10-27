@@ -297,13 +297,16 @@
   };
 
   /* -------------------------------------------------------
-     2. La carta: dades a carta.js (window.CARTA), generat a partir
-        del full de càlcul per scripts/actualitzar_carta.py
+     2. La carta: dades a carta.js (window.CARTA) i postres.js (window.POSTRES),
+        generats a partir dels fulls de càlcul per scripts/actualitzar_carta.py
         n: nom (string o {ca, es}) · d: descripció · p: preu €
         u: 'unit' | 'portion' · t: v = vegetarià, vg = vegà, hot = picant
      ------------------------------------------------------- */
   const CARTA = window.CARTA ?? { categories: [] };
-  const MENU = CARTA.categories;
+  const POSTRES = window.POSTRES?.categories?.[0];
+  const MENU = CARTA.categories.map((cat) =>
+    cat.dolci && POSTRES?.groups?.length ? { ...cat, dolci: false, groups: POSTRES.groups } : cat);
+  const UPDATED = [CARTA.updated, POSTRES && window.POSTRES.updated].filter(Boolean).sort().pop();
 
   /* -------------------------------------------------------
      3. Horari (minuts des de mitjanit). 0 = diumenge
@@ -413,9 +416,9 @@
     tabsEl.setAttribute('aria-label', t('a11y.tabs'));
 
     const updatedEl = $('[data-menu-updated]');
-    if (updatedEl && CARTA.updated) {
+    if (updatedEl && UPDATED) {
       const date = new Intl.DateTimeFormat(lang === 'es' ? 'es-ES' : 'ca-ES', { day: 'numeric', month: 'long', year: 'numeric' })
-        .format(new Date(CARTA.updated));
+        .format(new Date(UPDATED));
       updatedEl.textContent = t('menu.updated', { date });
     }
 
