@@ -1,7 +1,7 @@
 /* Generat automàticament per scripts/actualitzar_carta.py a partir del full de càlcul.
    No l'editis a mà: els canvis es perdrien a la propera actualització. */
 window.CARTA = {
- "updated": "2026-10-27T11:50:57+00:00",
+ "updated": "2026-10-27T12:08:44+00:00",
  "source": "carta.xlsx",
  "categories": [
   {
@@ -20,7 +20,7 @@ window.CARTA = {
      "items": [
       {
        "n": "Croquetes de pernil ibèric o de pollastre rostit",
-       "p": 2.1,
+       "p": 2.0,
        "u": "unit"
       },
       {
