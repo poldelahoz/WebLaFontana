@@ -1,8 +1,8 @@
 /* Generat automàticament per scripts/actualitzar_carta.py a partir del full de càlcul.
    No l'editis a mà: els canvis es perdrien a la propera actualització. */
 window.CARTA = {
- "updated": "2026-10-26T12:00:00+00:00",
- "source": "Carta-1/2/3.jpeg (transcripció manual)",
+ "updated": "2026-10-27T11:41:09+00:00",
+ "source": "carta.xlsx",
  "categories": [
   {
    "id": "antipasti",
@@ -19,15 +19,8 @@ window.CARTA = {
      },
      "items": [
       {
-       "n": {
-        "ca": "Croquetes",
-        "es": "Croquetas"
-       },
+       "n": "Croquetes de pernil ibèric o de pollastre rostit",
        "p": 2.0,
-       "d": {
-        "ca": "De pernil ibèric o de pollastre rostit",
-        "es": "De jamón ibérico o de pollo asado"
-       },
        "u": "unit"
       },
       {
@@ -54,10 +47,7 @@ window.CARTA = {
         "es": "Delicias"
        },
        "p": 12.0,
-       "d": {
-        "ca": "Farcellets farcits de brie, cabra i gorgonzola amb melmelada de tomàquet",
-        "es": "Saquitos rellenos de brie, cabra y gorgonzola con mermelada de tomate"
-       },
+       "d": "Farcellets farcits de brie, cabra i gorgonzola amb melmelada tomàquet",
        "t": [
         "v"
        ]
@@ -80,24 +70,18 @@ window.CARTA = {
        },
        "p": 12.9,
        "d": {
-        "ca": "Amb arrebossat de dues textures i dues salses",
-        "es": "Con rebozado de dos texturas y dos salsas"
+        "ca": "Amb arrebossat dues textures i dues salses",
+        "es": "Con enlucido dos texturas y dos salsas"
        }
       },
       {
-       "n": {
-        "ca": "Calamarcets a l'andalusa",
-        "es": "Chipirones a la andaluza"
-       },
+       "n": "Calamarcets a la \"andalusa\"",
        "p": 18.0
       },
       {
        "n": "Timbal",
        "p": 14.5,
-       "d": {
-        "ca": "Làmines d'albergínia amb salsa de tomàquet, formatge de cabra gratinat i ametlles",
-        "es": "Láminas de berenjena con salsa de tomate, queso de cabra gratinado y almendras"
-       },
+       "d": "Llàmines d'albegínia amb salsa de tomàquet, formatge de cabra gratinat i ametlles",
        "t": [
         "v"
        ]
@@ -106,7 +90,7 @@ window.CARTA = {
        "n": "La Provoletta",
        "p": 16.0,
        "d": {
-        "ca": "Formatge provolone semifos amb focaccia",
+        "ca": "Formatge provolone semi fos amb focaccia",
         "es": "Queso provolone semifundido con focaccia"
        },
        "t": [
@@ -114,15 +98,9 @@ window.CARTA = {
        ]
       },
       {
-       "n": {
-        "ca": "Tartar de salmó fumat",
-        "es": "Tartar de salmón ahumado"
-       },
+       "n": "Tartar de salmó fumat, alvocat i tomàquet",
        "p": 18.5,
-       "d": {
-        "ca": "Amb alvocat i tomàquet, mantega a les fines herbes i torradetes",
-        "es": "Con aguacate y tomate, mantequilla a las finas hierbas y tostaditas"
-       }
+       "d": "Amb mantega a les fines herbes i torradetes"
       }
      ],
      "note": {
@@ -139,10 +117,7 @@ window.CARTA = {
       {
        "n": "La Burrata di Apulia",
        "p": 14.0,
-       "d": {
-        "ca": "Bola de mozzarella fresca d'interior cremós amb brots d'enciam, tomàquets confitats i reducció d'oli d'alfàbrega",
-        "es": "Bola de mozzarella fresca de interior cremoso con brotes de lechuga, tomates confitados y reducción de aceite de albahaca"
-       },
+       "d": "Bola de mozzarella fresca d'interior cremós amb brots d'enciams, tomàquets confitats i reducció d'oli d'alfàbrega",
        "t": [
         "v"
        ]
@@ -150,10 +125,7 @@ window.CARTA = {
       {
        "n": "La Caprese",
        "p": 14.0,
-       "d": {
-        "ca": "Mozzarella de búfala fresca, tomàquet de temporada laminat, olives i orenga",
-        "es": "Mozzarella de búfala fresca, tomate de temporada laminado, aceitunas y orégano"
-       },
+       "d": "Mozzarella de búfala fresca, tomàquet de temporada llaminat, olives i orenga",
        "t": [
         "v"
        ]
@@ -162,32 +134,29 @@ window.CARTA = {
        "n": "Mixta",
        "p": 10.5,
        "d": {
-        "ca": "Variat d'enciams, tomàquet xerri, ceba, pastanaga, olives, tonyina i puntes d'espàrrecs",
-        "es": "Variado de lechugas, tomate cherry, cebolla, zanahoria, aceitunas, atún y puntas de espárragos"
+        "ca": "Variat d'enciam, tomàquet xerri, ceba, pastanaga, olives, tonyina i puntes d'espàrrecs",
+        "es": "Variado de lechuga, tomate cherry, cebolla, zanahoria, aceitunas, atún y puntas de espárragos"
        }
       },
       {
        "n": "Trentina",
        "p": 14.0,
-       "d": {
-        "ca": "Variat d'enciams, tomàquet xerri, cruixent de bacó, fruits secs i formatge de cabra amb vinagreta de nous",
-        "es": "Variado de lechugas, tomate cherry, crujiente de bacon, frutos secos y queso de cabra con vinagreta de nueces"
-       }
+       "d": "Variat d'enciam, tomàquet xerri, cruixent de bacon, fruits secs i formatge de cabra amb vinagreta de nous"
       },
       {
        "n": "Siena",
        "p": 16.0,
        "d": {
-        "ca": "Variat d'enciams, tomàquet sec confitat, encenalls de foie, pernil d'ànec, nous i encenalls de parmesà amb vinagreta de mel",
-        "es": "Variado de lechugas, tomate seco confitado, virutas de foie, jamón de pato, nueces y virutas de parmesano con vinagreta de miel"
+        "ca": "Variat d'enciam, tomàquet sec confitat, encenalls de foie, pernil d'ànec, nous i encenalls de parmesà amb vinagreta de mel",
+        "es": "Variado de lechuga, tomate seco confitado, virutas de foie, jamón de pato, nueces y virutas de parmesano con vinagreta de miel"
        }
       },
       {
        "n": "Pisa",
        "p": 13.5,
        "d": {
-        "ca": "Variat d'enciams, fruits vermells, pera i gorgonzola amb vinagreta de fruits vermells",
-        "es": "Variado de lechugas, frutos rojos, pera y gorgonzola con vinagreta de frutos rojos"
+        "ca": "Variat d'enciam, fruits vermells, pera i gorgonzola amb vimagreta de fruits vermells",
+        "es": "Variado de lechuga, frutos rojos, pera y gorgonzola con vinagreta de frutos rojos"
        },
        "t": [
         "v"
@@ -200,8 +169,8 @@ window.CARTA = {
        },
        "p": 15.5,
        "d": {
-        "ca": "Variat d'enciams, pollastre cruixent, encenalls de parmesà i crostons de pa amb salsa Cèsar",
-        "es": "Variado de lechugas, pollo crujiente, virutas de parmesano y picatostes con salsa César"
+        "ca": "Variat d'enciam, pollastre cruixent, encenalls de parmesà i crostonets de pa amb salsa cèsar",
+        "es": "Variado de lechuga, pollo crujiente, virutas de parmesano y crostonets de pan con salsa césar"
        }
       },
       {
@@ -213,12 +182,43 @@ window.CARTA = {
        }
       }
      ]
-    },
+    }
+   ]
+  },
+  {
+   "id": "paste",
+   "it": "Le Paste & Risotti",
+   "sub": {
+    "ca": "Pastes i risottos",
+    "es": "Pastas y risottos"
+   },
+   "groups": [
     {
      "title": {
-      "ca": "Pa i focaccia",
-      "es": "Pan y focaccia"
+      "ca": "Els risottos",
+      "es": "Los risottos"
      },
+     "items": [
+      {
+       "n": {
+        "ca": "Risotto de ceps",
+        "es": "Risotto de boletus"
+       },
+       "p": 18.0,
+       "t": [
+        "v"
+       ]
+      },
+      {
+       "n": {
+        "ca": "Risotto de gambes",
+        "es": "Risotto de gambas"
+       },
+       "p": 18.0
+      }
+     ]
+    },
+    {
      "items": [
       {
        "n": "Focaccia",
@@ -244,27 +244,21 @@ window.CARTA = {
       },
       {
        "n": {
-        "ca": "Pa de coca torrat amb tomàquet",
-        "es": "Pan de coca tostado con tomate"
+        "ca": "Pa de coca torrat",
+        "es": "Pan de coca tostado"
        },
        "p": 2.6,
+       "d": {
+        "ca": "Amb tomàquet",
+        "es": "Con tomate"
+       },
        "u": "portion",
        "t": [
         "v"
        ]
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "paste",
-   "it": "Le Paste & Risotti",
-   "sub": {
-    "ca": "Pastes i risottos",
-    "es": "Pastas y risottos"
-   },
-   "groups": [
+    },
     {
      "title": {
       "ca": "Les pastes",
@@ -272,10 +266,10 @@ window.CARTA = {
      },
      "items": [
       {
-       "n": "Spaghetti Frutti di Mare",
+       "n": "Spaghetti Frutti Mare",
        "p": 18.5,
        "d": {
-        "ca": "Amb cloïsses, musclos, calamars, gambes i salsa marinera",
+        "ca": "Amb cloïses, musclos, calamars, gambes i salsa marinera",
         "es": "Con almejas, mejillones, calamares, gambas y salsa marinera"
        }
       },
@@ -283,8 +277,8 @@ window.CARTA = {
        "n": "Spaghetti Vongole",
        "p": 17.0,
        "d": {
-        "ca": "Amb cloïsses, all i julivert",
-        "es": "Con almejas, ajo y perejil"
+        "ca": "Amb cloïses i all i julivert",
+        "es": "Con almejas y ajo y perejil"
        }
       },
       {
@@ -309,20 +303,14 @@ window.CARTA = {
       {
        "n": "Spaghetti",
        "p": 15.0,
-       "d": {
-        "ca": "A la bolonyesa, als 4 formaggi o a la carbonara (sense nata)",
-        "es": "A la boloñesa, a los 4 formaggi o a la carbonara (sin nata)"
-       }
+       "d": "A la bolognesa, als 4 fromaggi o a la carbonara (sense nata)"
       },
       {
-       "n": {
-        "ca": "Rigatoni amb calamars",
-        "es": "Rigatoni con calamares"
-       },
+       "n": "Rigatoni",
        "p": 18.5,
        "d": {
-        "ca": "Calamars saltats amb all i julivert i tomàquet xerri",
-        "es": "Calamares salteados con ajo y perejil y tomate cherry"
+        "ca": "Amb calamars saltats amb all i julivert i tomàquet xerri",
+        "es": "Con calamares salteados con ajo y perejil y tomate cherry"
        }
       },
       {
@@ -350,18 +338,12 @@ window.CARTA = {
       {
        "n": "Garganelli Nonna",
        "p": 16.0,
-       "d": {
-        "ca": "Amb salsa bolonyesa, gratinats amb formatge",
-        "es": "Con salsa boloñesa, gratinados con queso"
-       }
+       "d": "Amb salsa bolognese i gratinats amb formatge"
       },
       {
        "n": "Garganelli Salmone",
        "p": 17.5,
-       "d": {
-        "ca": "Amb salmó fumat flamejat al rom i nata",
-        "es": "Con salmón ahumado flambeado al ron y nata"
-       }
+       "d": "Amb salmó fumat flambejat al rom i nata"
       },
       {
        "n": "Garganelli Arrabbiata",
@@ -377,29 +359,19 @@ window.CARTA = {
       {
        "n": "Gnocchi",
        "p": 15.0,
-       "d": {
-        "ca": "Amb salsa de tomàquet i emmental o amb salsa 4 formaggi",
-        "es": "Con salsa de tomate y emmental o con salsa 4 formaggi"
-       },
+       "d": "Amb salsa tomàquet i emmental o amb salsa 4 fromaggi",
        "t": [
         "v"
        ]
       },
       {
-       "n": "Lasagna",
-       "p": 16.0,
-       "d": {
-        "ca": "De carn o de verdures",
-        "es": "De carne o de verduras"
-       }
+       "n": "Lasagna de Carn o de Verdures",
+       "p": 16.0
       },
       {
        "n": "Lunette",
        "p": 19.0,
-       "d": {
-        "ca": "Farcides de foie amb crema de parmesà i oli de tòfona",
-        "es": "Rellenas de foie con crema de parmesano y aceite de trufa"
-       }
+       "d": "Farcits de foie amb crema de parmesà i oli de tòfona"
       },
       {
        "n": "Fiocchi",
@@ -438,8 +410,8 @@ window.CARTA = {
        "n": "Raviolaccio",
        "p": 15.5,
        "d": {
-        "ca": "Farcit de carn amb salsa de tomàquet",
-        "es": "Relleno de carne con salsa de tomate"
+        "ca": "Farcits de carn amb salsa de tomàquet",
+        "es": "Rellenos de carne con salsa de tomate"
        }
       },
       {
@@ -449,31 +421,6 @@ window.CARTA = {
         "ca": "Farcits de gamba vermella amb salsa de gamba",
         "es": "Rellenos de gamba roja con salsa de gamba"
        }
-      }
-     ]
-    },
-    {
-     "title": {
-      "ca": "Els risottos",
-      "es": "Los risottos"
-     },
-     "items": [
-      {
-       "n": {
-        "ca": "Risotto de ceps",
-        "es": "Risotto de boletus"
-       },
-       "p": 18.0,
-       "t": [
-        "v"
-       ]
-      },
-      {
-       "n": {
-        "ca": "Risotto de gambes",
-        "es": "Risotto de gambas"
-       },
-       "p": 18.0
       }
      ]
     }
@@ -489,15 +436,15 @@ window.CARTA = {
    "groups": [
     {
      "title": {
-      "ca": "Pizzes gourmet",
-      "es": "Pizzas gourmet"
+      "ca": "Les pizzes gourmet",
+      "es": "Las pizzas gourmet"
      },
      "items": [
       {
        "n": "Apulia",
        "p": 17.5,
        "d": {
-        "ca": "Tomàquet, mozzarella, burrata, ruca, tomàquet sec i olivada",
+        "ca": "Tomàquet, mozzarella, burrata, rúcula, tomàquet sec i olivada",
         "es": "Tomate, mozzarella, burrata, rúcula, tomate seco y olivada"
        },
        "t": [
@@ -507,10 +454,7 @@ window.CARTA = {
       {
        "n": "Ariccia",
        "p": 18.6,
-       "d": {
-        "ca": "Tomàquet, mozzarella, porchetta (lligat de carn de porc rostida amb herbes aromàtiques) i poma caramel·litzada",
-        "es": "Tomate, mozzarella, porchetta (rollo de cerdo asado con hierbas aromáticas) y manzana caramelizada"
-       }
+       "d": "Tomàquet, mozzarella. Porchetta (lligat de carn de porc rostida amb herbes aromàtiques) i poma caramel-litzada"
       },
       {
        "n": "Pompeia",
@@ -532,8 +476,8 @@ window.CARTA = {
        "n": "Tartufata",
        "p": 17.5,
        "d": {
-        "ca": "Crema de tòfona, mozzarella, ceps i xampinyons",
-        "es": "Crema de trufa, mozzarella, boletus y champiñones"
+        "ca": "Crema de tòfuna, mozzarella, ceps i xampinyons",
+        "es": "Crema de trufa, mozzarella, setas y champiñones"
        },
        "t": [
         "v"
@@ -543,7 +487,7 @@ window.CARTA = {
        "n": "Toscana",
        "p": 18.6,
        "d": {
-        "ca": "Tomàquet, mozzarella, mortadel·la D.O., burratina, crema i cruixent de festucs",
+        "ca": "Tomàquet, mozzarella, mortadela D.O., burratina, crema i cruixent de festucs",
         "es": "Tomate, mozzarella, mortadela D.O., burratina, crema y crujiente de pistachos"
        }
       },
@@ -553,10 +497,7 @@ window.CARTA = {
         "es": "Vesubio"
        },
        "p": 17.5,
-       "d": {
-        "ca": "Tomàquet, mozzarella, botifarra negra, tomàquet xerri, pinyons i maionesa",
-        "es": "Tomate, mozzarella, butifarra negra, tomate cherry, piñones y mayonesa"
-       }
+       "d": "Tomàquet, mozzarella, bull negre, tomàquet xerri, pinyons i maionesa"
       },
       {
        "n": {
@@ -580,10 +521,7 @@ window.CARTA = {
      ]
     },
     {
-     "title": {
-      "ca": "Pizzes de sempre",
-      "es": "Pizzas de siempre"
-     },
+     "title": "Les pizzes de sempre",
      "items": [
       {
        "n": "Margherita",
@@ -597,15 +535,9 @@ window.CARTA = {
        ]
       },
       {
-       "n": {
-        "ca": "Margherita amb un ingredient",
-        "es": "Margherita con un ingrediente"
-       },
+       "n": "Margherita (sense orenga) i",
        "p": 14.5,
-       "d": {
-        "ca": "Sense orenga, amb pernil dolç, bacó, salami picant, frankfurt, funghi o tonyina",
-        "es": "Sin orégano, con jamón dulce, bacon, salami picante, frankfurt, funghi o atún"
-       }
+       "d": "Amb un ingredient: Pernil dolç o bacó o salami picant o frankfurt o funghi o tonyina"
       },
       {
        "n": "4 Formaggi",
@@ -690,8 +622,8 @@ window.CARTA = {
        "n": "Caliu",
        "p": 15.7,
        "d": {
-        "ca": "Tomàquet, mozzarella, patata caliu, brie, parmesà i allioli",
-        "es": "Tomate, mozzarella, patata caliu, brie, parmesano y alioli"
+        "ca": "Tomàquet, mozzarella, patata caliu, brie, parmesà i all i oli",
+        "es": "Tomate, mozzarella, patata calidez, brie, parmesano y ajo y aceite"
        },
        "t": [
         "v"
@@ -701,7 +633,7 @@ window.CARTA = {
        "n": "Capra",
        "p": 15.7,
        "d": {
-        "ca": "Tomàquet, mozzarella, ceba caramel·litzada i formatge de cabra",
+        "ca": "Tomàquet, mozzarella, ceba caramel-litzada i formatge de cabra",
         "es": "Tomate, mozzarella, cebolla caramelizada y queso de cabra"
        },
        "t": [
@@ -731,8 +663,8 @@ window.CARTA = {
        "n": "Catalana",
        "p": 15.7,
        "d": {
-        "ca": "Tomàquet, mozzarella, pernil dolç, salami picant, botifarra i bacó",
-        "es": "Tomate, mozzarella, jamón dulce, salami picante, butifarra y bacon"
+        "ca": "Tomàquet, mozzarella, pernil dolç, salami picant, butifarra i bacó",
+        "es": "Tomate, mozzarella, jamón dulce, salami picante, butifarra y beicon"
        }
       },
       {
@@ -755,8 +687,8 @@ window.CARTA = {
        "n": "Fontana",
        "p": 14.9,
        "d": {
-        "ca": "Tomàquet, mozzarella, botifarra, pebrot i ceba escalivats",
-        "es": "Tomate, mozzarella, butifarra, pimiento y cebolla asados"
+        "ca": "Tomàquet, mozzarella, butifarra, pebrot i ceba escalivats",
+        "es": "Tomate, mozzarella, butifarra, pimiento y cebolla escalivados"
        }
       },
       {
@@ -813,18 +745,12 @@ window.CARTA = {
       {
        "n": "Palermo",
        "p": 15.7,
-       "d": {
-        "ca": "Tomàquet, mozzarella, salami picant, formatge provolone i ceba caramel·litzada",
-        "es": "Tomate, mozzarella, salami picante, queso provolone y cebolla caramelizada"
-       }
+       "d": "Tomàquet, mozzarella, salami picant, formatge provolone i ceba caramelit-zada"
       },
       {
        "n": "Parma",
        "p": 15.7,
-       "d": {
-        "ca": "Tomàquet, mozzarella, pernil salat, encenalls de parmesà i ruca",
-        "es": "Tomate, mozzarella, jamón serrano, virutas de parmesano y rúcula"
-       }
+       "d": "Tomàquet, mozzarella, pernil salat, encenalls parmesà i ruca"
       },
       {
        "n": "Parmigiana",
@@ -838,7 +764,7 @@ window.CARTA = {
        ]
       },
       {
-       "n": "Prosciutto e Funghi",
+       "n": "Prosciutto Funghi",
        "p": 15.7,
        "d": {
         "ca": "Tomàquet, mozzarella, pernil dolç, xampinyons i olives",
@@ -848,10 +774,7 @@ window.CARTA = {
       {
        "n": "Stromboli",
        "p": 15.7,
-       "d": {
-        "ca": "Tomàquet, mozzarella, botifarra, tomàquet fresc laminat, ceba i rocafort",
-        "es": "Tomate, mozzarella, butifarra, tomate fresco laminado, cebolla y roquefort"
-       }
+       "d": "Tomàquet, mozzarella, botifarra, tomàquet fresc llaminat, ceba i roquefort"
       },
       {
        "n": "Tropical",
@@ -887,8 +810,8 @@ window.CARTA = {
        },
        "p": 15.9,
        "d": {
-        "ca": "Tomàquet, mozzarella vegana, albergínia, ceba caramel·litzada, xerris i oli d'alfàbrega",
-        "es": "Tomate, mozzarella vegana, berenjena, cebolla caramelizada, cherrys y aceite de albahaca"
+        "ca": "Tomàquet, mozzarella vegana, albergínia, ceba caremel-litzada, xerris i oli d'alfàbrega",
+        "es": "Tomate, mozzarella vegana, berenjena, cebolla caremelizada, charles y aceite de albahaca"
        },
        "t": [
         "vg"
@@ -896,30 +819,32 @@ window.CARTA = {
       }
      ],
      "extrasTitle": {
-      "ca": "Ingredients extra",
-      "es": "Ingredientes extra"
+      "ca": "Ingredient extra",
+      "es": "Ingrediente extra"
      },
      "extras": [
       {
        "p": 2.5,
-       "d": {
-        "ca": "Prosciutto, bacó, salami picant, tonyina, carxofes, gorgonzola, rocafort, brie, cabra, mozzarella, frankfurt",
-        "es": "Prosciutto, bacon, salami picante, atún, alcachofas, gorgonzola, roquefort, brie, cabra, mozzarella, frankfurt"
-       }
+       "d": "Prosciutto, bacó, salami picant, tonyina, carxofes, gorgonzola, roquefort, brie, cabra, mozzarella, frankfurt"
       },
       {
        "p": 3.5,
-       "d": {
-        "ca": "Pollastre, carn de vedella, botifarra, ceps, salmó, calamars, pernil salat, anxoves, pulled pork, mortadel·la, botifarra negra",
-        "es": "Pollo, carne de ternera, butifarra, boletus, salmón, calamares, jamón serrano, anchoas, pulled pork, mortadela, butifarra negra"
-       }
+       "d": "Pollastre, carn vedella, butifarra, ceps, salmó,calamars, pernil salat, anxoves, pulled pork, mortadela, bull negre"
       },
       {
        "p": 5.0,
+       "d": "Mozzarella búfala, burratina, gambes, foie, pernil ànec, confit d'ànec"
+      },
+      {
+       "p": 1.8,
        "d": {
-        "ca": "Mozzarella de búfala, burratina, gambes, foie, pernil d'ànec, confit d'ànec",
-        "es": "Mozzarella de búfala, burratina, gambas, foie, jamón de pato, confit de pato"
+        "ca": "Reste ingredients",
+        "es": "Resto de ingredientes"
        }
+      },
+      {
+       "p": 6.5,
+       "d": "Masa de pizza SENSE GLUTEN"
       }
      ]
     }
@@ -945,32 +870,20 @@ window.CARTA = {
         "es": "Chipirones a la plancha"
        },
        "p": 18.0,
-       "d": {
-        "ca": "Amb all i julivert, acompanyats de patata",
-        "es": "Con ajo y perejil, acompañados de patata"
-       }
+       "d": "Amb all i julivert amb patata"
       },
       {
-       "n": {
-        "ca": "Suprema de salmó",
-        "es": "Suprema de salmón"
-       },
+       "n": "Suprema de Salmó a la planxa",
        "p": 19.5,
        "d": {
-        "ca": "A la planxa amb verduretes saltades amb soja",
-        "es": "A la plancha con verduritas salteadas con soja"
+        "ca": "Amb verduretes saltades amb soja",
+        "es": "Con verduritas salteadas con soja"
        }
       },
       {
-       "n": {
-        "ca": "Llenguado",
-        "es": "Lenguado"
-       },
+       "n": "Llenguado a la planxa",
        "p": 21.0,
-       "d": {
-        "ca": "A la planxa amb verdures",
-        "es": "A la plancha con verduras"
-       }
+       "d": "Amb verdures"
       }
      ]
     },
@@ -981,32 +894,19 @@ window.CARTA = {
      },
      "items": [
       {
-       "n": {
-        "ca": "Galtes de porc",
-        "es": "Carrilleras de cerdo"
-       },
-       "p": 16.0,
-       "d": {
-        "ca": "Filetejades a la planxa",
-        "es": "Fileteadas a la plancha"
-       }
+       "n": "Galtes de porc filatejades a la planxa",
+       "p": 16.0
       },
       {
-       "n": {
-        "ca": "Peus de porc",
-        "es": "Manitas de cerdo"
-       },
+       "n": "Peus de porc a la planxa",
        "p": 17.0,
        "d": {
-        "ca": "A la planxa amb picada d'ametlla",
-        "es": "A la plancha con picada de almendra"
+        "ca": "Amb picada d'ametlla",
+        "es": "Con picada de almendra"
        }
       },
       {
-       "n": {
-        "ca": "Galta a baixa temperatura",
-        "es": "Carrillera a baja temperatura"
-       },
+       "n": "Galta cuinada a baixa temperatura",
        "p": 18.0,
        "d": {
         "ca": "Amb salsa de bolets i reducció de vi",
